@@ -62,7 +62,7 @@ answers:
     -
         answer_text: "Option 2"
         answer_weight: 0
----
+```
 
 Question description goes here.
 
