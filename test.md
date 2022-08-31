@@ -26,7 +26,7 @@ answers:
 
 Question description goes here.
 
-Support Markdown syntax, `hi`, *hihi*, **hihihi**.
+Support Markdown syntax, $x=12$, `hi`, *hihi*, **hihihi**.
 
 ```cpp
 #include <stdio.h>
@@ -50,4 +50,8 @@ answers:
         answer_weight: 100
 ```
 
-1 + 1 = ?
+$1 + 1 =$ ?
+
+$$y = 9x^2 + \frac{3}{2}$$
+
+Yes

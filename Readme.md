@@ -84,11 +84,10 @@ git clone https://github.com/linsyking/canvas-markdown-quiz.git
 
 ```sh
 # using pip for python
-
-pip install markdown canvasapi
+pip install yaml markdown canvasapi mdx-math-img
 
 # If you use pip3 for python3
-pip3 install markdown canvasapi
+pip3 install yaml markdown canvasapi mdx-math-img
 ```
 
 3. Modify Configs
@@ -117,8 +116,3 @@ python3 ./generate.py <md filename>
 ## Snapshot
 
 ![](img/result.png)
-
-## TO-DOs
-
-Latex support is not implemented because Canvas LMS doesn't allow js script to be included in the quiz content, so I am trying to figure out other solutions.
-

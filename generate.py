@@ -24,7 +24,13 @@ class quiz_utils:
 
     def _render_md(self, m_string: str):
         html = markdown(m_string,
-                        extensions=["codehilite", "fenced_code"]
+                        extensions=["codehilite", "fenced_code", "mdx_math_img"],
+                        extension_configs={
+                            'mdx_math_img': {
+                                'enable_dollar_delimiter': True,
+                                'add_preview': True
+                            }
+                        }
                         )
         return html
 
