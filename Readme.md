@@ -93,7 +93,7 @@ pip3 install markdown canvasapi
 
 3. Modify Configs
 
-Edit `config.py`, change these three values:
+Rename `config_sample.py` to `config.py`, then edit this file, change these three values:
 
 ```py
 CANVAS_API_URL = "<Your canvas url>"
