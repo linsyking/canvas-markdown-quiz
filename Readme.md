@@ -2,6 +2,12 @@
 
 Add markdown support for Canvas LMS quizzes.
 
+## Features
+
+- Markdown parsing
+- Latex Rendering (using [Upmath](https://upmath.me/) as backend)
+- One markdown file per quiz
+
 ## Quick Start
 
 ### Markdown Writing
