@@ -3,7 +3,7 @@ from . import initialize
 import sys
 
 def main():
-    if len(sys.argv) < 2:
+    if len(sys.argv) != 2:
         print("usage: cvs-makequiz <md filepath>")
         exit(0)
     url, key, cid, opt = initialize.init()
