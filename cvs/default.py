@@ -1,12 +1,6 @@
 # coding=utf-8
 
-CANVAS_API_URL = "<Your canvas url>"
-
-CANVAS_API_KEY = "<Your canvas key>"
-
-COURSE_ID = 1 # Change this to your course id
-
-HTML_SCRIPT = """
+HTML_HEADER = """
 <style>
 pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }

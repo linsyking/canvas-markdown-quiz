@@ -1,3 +1,8 @@
 __pycache__
 config.py
-test.py
+tests/
+*.pyc
+/*.egg-info
+/dist/
+.cvsrc
+build/

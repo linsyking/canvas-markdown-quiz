@@ -78,45 +78,26 @@ int main(){
 
 Quiz question config should be formatted as YAML, and the options are available at [this page](https://canvas.instructure.com/doc/api/quiz_questions.html#method.quizzes/quiz_questions.create). You don't have to set the text parameter in this config.
 
-### Quiz Generator
+### Installation
 
-1. Clone this repo
-
-```sh
-git clone https://github.com/linsyking/canvas-markdown-quiz.git
-```
-
-2. Install Dependencies
+1. Install `canvas-markdown-quiz`
 
 ```sh
 # using pip for python
-pip install yaml markdown canvasapi mdx-math-img
+pip install canvas-markdown-quiz
 
-# If you use pip3 for python3
-pip3 install yaml markdown canvasapi mdx-math-img
+# using pip3 for python3
+pip3 install canvas-markdown-quiz
 ```
 
-3. Modify Configs
+2. Run command
 
-Rename `config_sample.py` to `config.py`, then edit this file, change these three values:
+Open your project directory, and type the following command to run.
 
-```py
-CANVAS_API_URL = "<Your canvas url>"
-
-CANVAS_API_KEY = "<Your canvas key>"
-
-COURSE_ID = 1 # Change this to your course id
-```
-
-4. Run command
+For the first time, it will ask you some questions to save the configuration file.
 
 ```sh
-# using python
-
-python ./generate.py <md filename>
-
-# If you use python3
-python3 ./generate.py <md filename>
+cvs-makequiz <md filename>
 ```
 
 ## Snapshot
