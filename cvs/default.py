@@ -2,7 +2,7 @@
 
 HTML_HEADER = """
 <style>
-pre { line-height: 125%; }
+pre { line-height: 125%; white-space: pre; overflow: auto; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
