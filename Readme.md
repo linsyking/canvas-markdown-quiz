@@ -12,7 +12,7 @@ Add markdown support for Canvas LMS quizzes.
 
 ### Markdown Writing
 
-Following `test.md`, create your own quiz markdown file, like `quiz1.md`.
+Following `test_quiz.md`, create your own quiz markdown file, like `quiz1.md`.
 
 The structure of this md file should be like this:
 
@@ -89,6 +89,8 @@ pip install canvas-markdown-quiz
 # using pip3 for python3
 pip3 install canvas-markdown-quiz
 ```
+
+Note: If you cannot install `canvasapi`, please check your network connection. We recommend you to use [Tsinghua mirror](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/) in the mainland of China.
 
 2. Run command
 
