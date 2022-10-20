@@ -50,6 +50,7 @@ class quiz_maker(quiz_utils):
         self.quiz_p = {}
         # All quiz questions
         self.quiz_aq = []
+        self.quiz_groups = []
         self.inited = False
         self.options = options
 
@@ -80,11 +81,24 @@ class quiz_maker(quiz_utils):
     def create_quiz(self):
         self.__parse_md()
 
+        # print(self.quiz_groups)
+        # print(self.quiz_aq)
+
         # Publish
         myquiz = self.c_course.create_quiz(self.quiz_p)
 
-        for q in self.quiz_aq:
-            myquiz.create_question(question=q)
+        if len(self.quiz_groups) > 0:
+            g_name2id = {}
+            for group in self.quiz_groups:
+                resp_group = myquiz.create_question_group([group])
+                g_name2id[group["name"]] = resp_group.id
+            for q in self.quiz_aq:
+                if "quiz_group_id" in q:
+                    q["quiz_group_id"] = g_name2id[q["quiz_group_id"]]
+                myquiz.create_question(question=q)
+        else:
+            for q in self.quiz_aq:
+                myquiz.create_question(question=q)
 
         print("Success")
 
@@ -102,8 +116,19 @@ class quiz_maker(quiz_utils):
         self.quiz_p["description"] = q_desc + self.html_header
         self.quiz_p.update(q_meta_info)
 
+        # By default no groups are enabled
+        cur_group_name = ""
         for q_qid in range(3, len(q_blocks)):
             m_q = question(q_blocks[q_qid], self.options).parse()
+            if "question_text" not in m_q:
+                # Create a group
+                cur_group_name = m_q["name"]
+                if cur_group_name != "":
+                    self.quiz_groups.append(dict(m_q))
+                continue
+            if cur_group_name != "":
+                # Inside a group
+                m_q["quiz_group_id"] = cur_group_name
             self.quiz_aq.append(m_q)
 
     def __get_title_and_desc(self, block: str):
@@ -124,5 +149,6 @@ class question(quiz_utils):
         q_meta = self._decode_yaml(res[0].strip())
         q_desc = self._render_md(res[1].strip())
         m_q.update(q_meta)
-        m_q["question_text"] = q_desc
+        if len(q_desc) > 0:
+            m_q["question_text"] = q_desc
         return m_q
