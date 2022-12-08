@@ -12,9 +12,9 @@ Add markdown support for Canvas LMS quizzes.
 
 ### Markdown Writing
 
-Following `test_quiz.md`, create your own quiz markdown file, like `quiz1.md`.
+Following `test_quiz.md` in `examples` folder, you can create your quiz markdown file, like `quiz1.md`.
 
-The structure of this md file should be like this:
+The structure of this markdown file should be like this:
 
 ```md
 ---
